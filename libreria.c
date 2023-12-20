@@ -7,7 +7,7 @@
 char* readMultipleLines()
 {
     char lineBuffer[512];
-    char* wholeReadString = (char*)malloc(sizeof(char));
+    char* wholeReadString = malloc(sizeof(char));
     wholeReadString[0] = '\0';
 
     while (fgets(lineBuffer, sizeof(lineBuffer), stdin) != NULL)
@@ -86,9 +86,9 @@ int longlines(int N)
     for (i = 0; temp != NULL; i++)
     {
         if (i == 0)
-            longestLines = (char**)malloc(sizeof(char**));
+            longestLines = malloc(sizeof(char*));
         else
-            longestLines = (char**)realloc(longestLines, sizeof(char**) * (i+1));
+            longestLines = realloc(longestLines, sizeof(char*) * (i+1));
 
         longestLines[i] = temp;
 
